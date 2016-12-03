@@ -7,7 +7,8 @@ export default createReducer(initialState, {
 
         /* Exercise 1: Update redux state from response */
 
-        return state
+        return response.messages
+        
     }
 })
 
