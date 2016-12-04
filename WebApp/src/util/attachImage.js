@@ -10,6 +10,7 @@ const MAX_IMAGE_SIZE_BYTES = 100 * 1024
  * Now you can render an HTML5 file input, e.g.:
  * <input type="file" onChange={this.onAttachImage} />
  */
+
 export default function attachImage (e) {
   e.preventDefault()
   const file = e.target.files[0]

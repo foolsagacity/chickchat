@@ -33,9 +33,11 @@ export class Chat extends React.Component {
 
 function renderMessage (message) {
     return (
+
         <li key={message.messageId}>
 
-            {message.author.name + "> "}
+            <img style= {imageStyle} src = {message.author.picture} height = "100" />
+            {message.author.name + ": "}
 
             {getMessageBody(message)}
         </li>
@@ -43,9 +45,11 @@ function renderMessage (message) {
 }
 
 const ulStyle = {
-    overflowY: "scroll",
+listStyle:"none",
+    overflowY: "scroll"
 
     /* Exercise 4: Add your own styles */
+
 
 }
 
@@ -66,11 +70,18 @@ function getMessageDate (message) {
     return moment(message.timestampUtc).format("dddd, h:mm A")
 }
 
-function getMessageBody (message) {
-    if (message.data) {
+function getMessageBody (message)
+{
+    if (message.data)
+    {
         return <img src={message.data} style={imageStyle} />
-    } else {
-        return message.text
+    }
+    else
+    {
+          return <span style = {{color: "#00CC88"}}>
+                {message.text}
+             </span>
+
     }
 }
 
